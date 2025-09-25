@@ -12,18 +12,40 @@
 #       - name: printWord
 #         run: echo "Hell From Kishan"
 
+
+
 # --------------- schedule --------------
 
-name: Schedule Job
+# name: Schedule Job
+
+# on:
+#   schedule:
+#     - cron: "0 0 * * *" # 12:00PM
+
+# jobs:
+#   run-script:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Print Message
+#         run: echo "Schedule Workflow Executed"
+
+
+
+
+# ---------------------- Dissable Workflow -------------------
+
+name: Disable Workflow 
 
 on:
-  schedule:
-    - cron: "0 0 * * *" # 12:00PM
+  push:
+    branches: [ main ]
 
 jobs:
-  run-script:
+  disable:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print Message
-        run: echo "Schedule Workflow Executed"
+      - name: Disable
+        run: echo "Disable woekflow"
+  
