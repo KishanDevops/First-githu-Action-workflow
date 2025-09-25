@@ -1,13 +1,29 @@
-name: Kishan Lokhil
+# name: push Event CI
+
+# on:
+#   push:
+#     branches: [ main ]
+
+# jobs:
+#   demo:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: printWord
+#         run: echo "Hell From Kishan"
+
+# --------------- schedule --------------
+
+name: Schedule Job
 
 on:
-  push:
-    branches: [ main ]
+  schedule:
+    - cron: "0 0 * * *" # 12:00PM
 
 jobs:
-  demo:
+  run-script:
     runs-on: ubuntu-latest
 
     steps:
-      - name: printWord
-        run: echo "Hell From Kishan"
+      - name: Print Message
+        run: echo "Schedule Workflow Executed"
